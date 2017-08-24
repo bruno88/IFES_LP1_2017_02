@@ -1,5 +1,9 @@
 package Conteudo1;
 
+import java.util.ArrayList;
+
+import javax.swing.JOptionPane;
+
 public class Pessoa {
 	private String nome, RG, telefone, email;
 
@@ -42,10 +46,74 @@ public class Pessoa {
 		this.email = email;
 	}
 
+	public static void inserirPessoa(ArrayList<Pessoa> pessoasCadastradas) {
+		String nome, RG, telefone, email;
+
+		nome = JOptionPane.showInputDialog("Digite o nome da pessoa");
+		RG = JOptionPane.showInputDialog("Digite o RG da pessoa");
+		telefone = JOptionPane.showInputDialog("Digite o telefone da pessoa");
+		email = JOptionPane.showInputDialog("Digite o email da pessoa");
+
+		Pessoa novaPessoa = new Pessoa(nome, RG, telefone, email);
+		
+		pessoasCadastradas.add(novaPessoa);
+
+	}
+
+	public static String imprimirListaPessoas(ArrayList<Pessoa> pessoasCadastradas) {
+		String saida = "";
+
+		// Utilizano o For
+//		for (int i = 0; i < pessoasCadastradas.size(); i++) {
+//			saida += pessoasCadastradas.get(i).toString() + "\n";
+//		}
+
+		// Utilizando o For Each
+		for (Pessoa p1 : pessoasCadastradas) {
+			saida += p1.toString() + "\n";
+		}
+		return saida;
+	}
+
+	public static String consultarPessoa(ArrayList<Pessoa> pessoasCadastradas) {
+		String nome, saida = "";
+		nome = JOptionPane.showInputDialog("Digite o nome da pessoa a ser consultada");
+		for (Pessoa p1 : pessoasCadastradas) {
+			if (p1.getNome().equalsIgnoreCase(nome)) {
+				saida += p1.toString() + "\n";
+			}
+		}
+		if (saida.isEmpty()) {
+			saida = "A Pessoa digitada (" + nome + ") não está cadastrada";
+		}
+		return saida;
+	}
+
+	public static String excluirPessoa(ArrayList<Pessoa> pessoasCadastradas) {
+		String nome, saida = "";
+		Pessoa pessoaExcluida = null;
+		nome = JOptionPane.showInputDialog("Digite o nome da pessoa a ser excluída");
+		for (Pessoa p1 : pessoasCadastradas) {
+			if (p1.getNome().equalsIgnoreCase(nome)) {
+				pessoaExcluida = p1;
+			}
+		}
+		if (pessoaExcluida != null) {
+			pessoasCadastradas.remove(pessoaExcluida);
+			saida = "A Pessoa digitada (" + nome + ") foi removida com sucesso";
+		}
+
+		if (saida.isEmpty()) {
+			saida = "A Pessoa digitada (" + nome + ") não está cadastrada";
+		}
+		return saida;
+	}
+
 	@Override
 	public String toString() {
 		return "Pessoa [nome=" + nome + ", RG=" + RG + ", telefone=" + telefone + ", email=" + email + "]";
-		//return nome + ":\n" + "RG: " + RG + "\nTelefone: " + telefone + "\nE-Mail: " + email + "\n";
+		// return nome + ":\n" + "RG: " + RG + "\nTelefone: " + telefone + "\nE-Mail: "
+		// + email + "\n";
 	}
 
 }
