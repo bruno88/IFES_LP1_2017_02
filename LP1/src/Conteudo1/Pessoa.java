@@ -55,7 +55,7 @@ public class Pessoa {
 		email = JOptionPane.showInputDialog("Digite o email da pessoa");
 
 		Pessoa novaPessoa = new Pessoa(nome, RG, telefone, email);
-		
+
 		pessoasCadastradas.add(novaPessoa);
 
 	}
@@ -63,14 +63,18 @@ public class Pessoa {
 	public static String imprimirListaPessoas(ArrayList<Pessoa> pessoasCadastradas) {
 		String saida = "";
 
-		// Utilizano o For
-//		for (int i = 0; i < pessoasCadastradas.size(); i++) {
-//			saida += pessoasCadastradas.get(i).toString() + "\n";
-//		}
+		// Utilizano o For tradicional
+		// for (int i = 0; i < pessoasCadastradas.size(); i++) {
+		// saida += pessoasCadastradas.get(i).toString() + "\n";
+		// }
 
 		// Utilizando o For Each
 		for (Pessoa p1 : pessoasCadastradas) {
 			saida += p1.toString() + "\n";
+		}
+
+		if (saida.isEmpty()) {
+			saida = "Você ainda não cadastrou nenhuma Pessoa";
 		}
 		return saida;
 	}
@@ -111,9 +115,10 @@ public class Pessoa {
 
 	@Override
 	public String toString() {
-		return "Pessoa [nome=" + nome + ", RG=" + RG + ", telefone=" + telefone + ", email=" + email + "]";
-		// return nome + ":\n" + "RG: " + RG + "\nTelefone: " + telefone + "\nE-Mail: "
-		// + email + "\n";
+		return "Pessoa [nome=" + nome 
+				+ ", RG=" + RG 
+				+ ", telefone=" + telefone 
+				+ ", email=" + email + "]";
 	}
 
 }

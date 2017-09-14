@@ -28,12 +28,7 @@ public class Exerc2 {
 				Pessoa.inserirPessoa(pessoasCadastradas);
 				break;
 			case 2:
-				saida = Pessoa.imprimirListaPessoas(pessoasCadastradas);
-				String aux = "";
-				
-				if (saida.isEmpty()) {
-					saida = "Você ainda não cadastrou nenhuma Pessoa";
-				}
+				saida = Pessoa.imprimirListaPessoas(pessoasCadastradas);				
 				JOptionPane.showMessageDialog(null, saida);
 				break;
 			case 3:
