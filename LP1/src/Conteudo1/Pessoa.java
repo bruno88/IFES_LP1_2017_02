@@ -112,6 +112,15 @@ public class Pessoa {
 		}
 		return saida;
 	}
+	
+	public static Pessoa getPessoaPorNome(ArrayList<Pessoa> lista, String nome) {
+		for (Pessoa p1 : lista) {
+			if (p1.getNome().equalsIgnoreCase(nome)) {
+				return p1;
+			}
+		}
+		return null;
+	}
 
 	@Override
 	public String toString() {

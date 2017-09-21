@@ -4,6 +4,12 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+/* Esse arquivo não está mais funcionando, devido a 
+ * modificações nas classes Acervo e Livro.
+ * Consultar o arquivo Exer5, uma versão melhorada 
+ * da resolução deste mesmo exercício.
+ */
+
 public class Exerc4 {
 
 	public static void main(String[] args) {
@@ -13,7 +19,7 @@ public class Exerc4 {
 		String titulo, autor, editora, palavraChave;
 		int op;
 
-		ArrayList<Livro> livrosCadastrados = new ArrayList<Livro>();
+		
 		
 
 		do {
@@ -48,7 +54,7 @@ public class Exerc4 {
 				}
 				break;
 			case 3:
-				titulo = JOptionPane.showInputDialog(null, "Digite o título do livro");
+				titulo = JOptionPane.showInputDialog(null, "Digite o autor do livro");
 				livroConsultado = Livro.getLivroPorAutor(livrosCadastrados, titulo);
 				if (livroConsultado == null) {
 					saida = "Livro não encontrado";

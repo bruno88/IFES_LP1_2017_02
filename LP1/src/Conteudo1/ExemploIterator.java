@@ -28,7 +28,7 @@ public class ExemploIterator {
 		novaPessoa = new Pessoa(nome, RG, telefone, email);
 		pessoasCadastradas.add(novaPessoa);
 
-		// Mostrar o erro por não atualizar o Iterator
+		// 5: Mostrar o erro por não atualizar o Iterator
 		// itPessoas = pessoasCadastradas.iterator();
 
 		// Pessoa 3
@@ -39,15 +39,7 @@ public class ExemploIterator {
 		novaPessoa = new Pessoa(nome, RG, telefone, email);
 		pessoasCadastradas.add(novaPessoa);
 
-		// Mostrar problema ao remover com o For
-
-		/*for (int i = 0; i < pessoasCadastradas.size(); i++) {
-			if (pessoasCadastradas.get(i).getNome() == "bruno") {
-				pessoasCadastradas.remove(pessoasCadastradas.get(i));
-			}
-		}*/
-
-		// Mostrar Problema com For Each
+		// 1: Mostrar Problema com For Each
 
 		/*for (Pessoa pessoa : pessoasCadastradas) {
 			if (pessoa.getNome() == "bruno") {
@@ -55,22 +47,29 @@ public class ExemploIterator {
 			}
 		}*/
 
-		// "Atualiza" o iterator
+		// 2: Mostrar que não há problema ao remover com o For
 
-		/*itPessoas = pessoasCadastradas. iterator();
+		/*for (int i = 0; i < pessoasCadastradas.size(); i++) {
+			if (pessoasCadastradas.get(i).getNome() == "bruno") {
+				pessoasCadastradas.remove(pessoasCadastradas.get(i));
+			}
+		}*/
+		
+		// 4 : Mostrar o uso do Iterator
+
+		itPessoas = pessoasCadastradas.iterator();
 		while (itPessoas.hasNext()) {
 			pessoaAtual = (Pessoa) itPessoas.next();
 			if (pessoaAtual.getNome() == "bruno") {
 				itPessoas.remove();
-			} 
-		}*/
+			}
+		}
 
 		// No final, imprime toda a lista, para testes
-		 itPessoas = pessoasCadastradas.iterator();
-		while (itPessoas.hasNext())
-		{
+		itPessoas = pessoasCadastradas.iterator();
+		while (itPessoas.hasNext()) {
 			JOptionPane.showMessageDialog(null, itPessoas.next());
 		}
-		 
+
 	}
 }

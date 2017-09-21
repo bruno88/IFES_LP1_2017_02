@@ -82,15 +82,22 @@ public class Exerc3 {
 						Conta novaConta;
 
 						nome = JOptionPane.showInputDialog("Digite o nome do titular da conta");
-						strSaldo = JOptionPane.showInputDialog("Digite o saldo atual");
-						if (strSaldo.isEmpty()) {
-							novaConta = new Conta(nome);
-						} else {
-							saldo = Double.parseDouble(strSaldo);
-							novaConta = new Conta(nome, saldo);
-						}
+						Pessoa p1 = Pessoa.getPessoaPorNome(pessoasCadastradas,nome);
+						if (p1 != null) {
+							strSaldo = JOptionPane.showInputDialog("Digite o saldo atual");
+							if (strSaldo.isEmpty()) {
+								novaConta = new Conta(p1);
+							} else {
+								saldo = Double.parseDouble(strSaldo);
+								novaConta = new Conta(p1, saldo);
+							}
 
-						contasCadastradas.add(novaConta);
+							contasCadastradas.add(novaConta);
+						} else {
+							JOptionPane.showMessageDialog(null, "Pessoa não encontrada. \n Cadastre-a na Gerencia de Pessoas!");
+						}
+						
+						
 						break;
 
 						// 2 - Remover Conta
@@ -104,7 +111,7 @@ public class Exerc3 {
 						cont = 0;
 
 						for (Conta conta : contasCadastradas) {
-							if (conta.getNomeTitular().equalsIgnoreCase(nome)) {
+							if (conta.getTitular().getNome().equalsIgnoreCase(nome)) {
 								JOptionPane.showMessageDialog(null, "Conta número: " + conta.getNumero());
 								cont++;
 							}

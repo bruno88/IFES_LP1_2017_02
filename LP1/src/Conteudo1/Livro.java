@@ -69,32 +69,6 @@ public class Livro {
 		this.palavrasChave.remove(palavra);
 	}
 
-	public static Livro getLivroPorTitulo(ArrayList<Livro> livrosCadastrados, String titulo) {
-		Livro l1;
-		
-		for (int i = 0; i < livrosCadastrados.size(); i++) {
-			l1 = livrosCadastrados.get(i);
-			if (l1.getTitulo().equalsIgnoreCase(titulo)) {
-				return l1;
-			}
-		}
-		/*for (Livro livro : livrosCadastrados) {
-			if (livro.getTitulo().equalsIgnoreCase(titulo)) {
-				return livro;
-			}
-		}*/
-		return null;
-	}
-
-	public static Livro getLivroPorAutor(ArrayList<Livro> livrosCadastrados, String titulo) {
-		for (Livro livro : livrosCadastrados) {
-			if (livro.getAutor().equalsIgnoreCase(titulo)) {
-				return livro;
-			}
-		}
-		return null;
-	}
-
 	@Override
 	public String toString() {
 		return "Livro [titulo=" + titulo + ", resumo=" + resumo + ", autor=" + autor + ", editora=" + editora

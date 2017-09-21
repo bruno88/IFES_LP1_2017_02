@@ -1,16 +1,17 @@
 package Conteudo1;
 
 public class Conta {
-	private String nomeTitular, numero;
+	private String numero;
 	private double saldo, limite;
+	private Pessoa titular;
 	public static int qtdContas = 0;
-	public Pessoa titular;
 	
-	public Conta(String nomeTitular) {
+	public Conta(Pessoa titular) {
 		this.qtdContas++;
 
 		// Nome do Títular
-		this.nomeTitular = nomeTitular;
+		this.titular = titular;
+		
 		// Número da conta
 		this.numero = String.valueOf(qtdContas);
 		// Saldo
@@ -19,11 +20,11 @@ public class Conta {
 		this.limite = 500;
 	}
 
-	public Conta(String nomeTitular, double saldo) {
+	public Conta(Pessoa titular, double saldo) {
 		this.qtdContas++;
 
 		// Nome do Títular
-		this.nomeTitular = nomeTitular;
+		this.titular = titular;
 		// Número da conta
 		this.numero = String.valueOf(qtdContas);
 		// Saldo
@@ -32,12 +33,12 @@ public class Conta {
 		this.limite = saldo * 2;
 	}
 
-	public String getNomeTitular() {
-		return nomeTitular;
+	public Pessoa getTitular() {
+		return titular;
 	}
 
-	public void setNomeTitular(String nomeTitular) {
-		this.nomeTitular = nomeTitular;
+	public void setTitular(Pessoa titular) {
+		this.titular = titular;
 	}
 
 	public String getNumero() {
@@ -81,7 +82,7 @@ public class Conta {
 	@Override
 	public String toString() {
 		return "Conta numero=" + this.numero
-				+ "\nTítular: " + this.nomeTitular
+				+ "\nTítular: " + this.titular.getNome()
 				+ "\nSaldo: " + this.saldo
 				+ "\nLimite: " + this.limite;
 	}
