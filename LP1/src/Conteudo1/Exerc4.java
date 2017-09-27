@@ -8,12 +8,14 @@ import javax.swing.JOptionPane;
  * modificações nas classes Acervo e Livro.
  * Consultar o arquivo Exer5, uma versão melhorada 
  * da resolução deste mesmo exercício.
+ * Pra usar: descomentar as linhas com comentário de linha
+ * Foram comentadas pra não dar erro no Projeto todo
  */
 
 public class Exerc4 {
 
 	public static void main(String[] args) {
-		Livro livroConsultado;
+		Livro livroConsultado = null;
 		boolean continuarMenu = true;
 		String entrada = "", saida = "";
 		String titulo, autor, editora, palavraChave;
@@ -41,12 +43,12 @@ public class Exerc4 {
 				autor = JOptionPane.showInputDialog(null, "Digite o autor do livro");
 				editora = JOptionPane.showInputDialog(null, "Digite a editora do livro");
 				Livro novoLivro = new Livro(titulo, autor, editora);
-				livrosCadastrados.add(novoLivro);
+//				livrosCadastrados.add(novoLivro);
 				saida = "Livro cadastrado com Sucesso !";
 				break;
 			case 2:
 				titulo = JOptionPane.showInputDialog(null, "Digite o título do livro");
-				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
+//				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
 				if (livroConsultado == null) {
 					saida = "Livro não encontrado";
 				} else {
@@ -55,7 +57,7 @@ public class Exerc4 {
 				break;
 			case 3:
 				titulo = JOptionPane.showInputDialog(null, "Digite o autor do livro");
-				livroConsultado = Livro.getLivroPorAutor(livrosCadastrados, titulo);
+//				livroConsultado = Livro.getLivroPorAutor(livrosCadastrados, titulo);
 				if (livroConsultado == null) {
 					saida = "Livro não encontrado";
 				} else {
@@ -64,18 +66,18 @@ public class Exerc4 {
 				break;
 			case 4:
 				titulo = JOptionPane.showInputDialog(null, "Digite o título do livro");
-				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
+//				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
 				if (livroConsultado == null) {
 					saida = "Livro não encontrado";
 				} else {
-					livrosCadastrados.remove(livroConsultado);
+//					livrosCadastrados.remove(livroConsultado);
 					saida = "Livro Removido com sucesso";
 				}
 				break;
 			// 5 - Adicionar Palavra Chave 
 			case 5:
 				titulo = JOptionPane.showInputDialog(null, "Digite o título do livro");
-				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
+//				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
 				
 				if (livroConsultado == null) {
 					saida = "Livro não encontrado";
@@ -89,7 +91,7 @@ public class Exerc4 {
 			// 6 - Remover Palavra Chave" 
 			case 6:
 				titulo = JOptionPane.showInputDialog(null, "Digite o título do livro");
-				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
+//				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
 				if (livroConsultado == null) {
 					saida = "Livro não encontrado";
 				} else {
@@ -101,7 +103,7 @@ public class Exerc4 {
 			// 7 - Listar Palavra Chave
 			case 7:
 				titulo = JOptionPane.showInputDialog(null, "Digite o título do livro");
-				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
+//				livroConsultado = Livro.getLivroPorTitulo(livrosCadastrados, titulo);
 				if (livroConsultado == null) {
 					saida = "Livro não encontrado";
 				} else {
