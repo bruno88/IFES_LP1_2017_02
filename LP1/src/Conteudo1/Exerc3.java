@@ -9,7 +9,7 @@ public class Exerc3 {
 	public static void main(String[] args) {
 		boolean sairMenuPrincipal = false, sairMenuPessoas = false, sairMenuContas = false;
 		String nome, entrada, saida, strSaldo, strNumero;
-		int op, cont, numConta;
+		int op, cont;
 		double saldo, valor;
 
 		ArrayList<Pessoa> pessoasCadastradas = new ArrayList<Pessoa>();
