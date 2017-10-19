@@ -45,9 +45,10 @@ public class ExemploIterator2 {
 		contasCadastradas.add(c1);
 		
 		itPessoas = pessoasCadastradas.iterator();
-		itContas = contasCadastradas.iterator();
 		removePorNome(itPessoas, "bruno");
-		removePorNome(itContas, "maria");
+		
+		itContas = contasCadastradas.iterator();
+		//removePorNome(itContas, "maria");
 
 		// No final, imprime toda a lista, para testes
 		itPessoas = pessoasCadastradas.iterator();

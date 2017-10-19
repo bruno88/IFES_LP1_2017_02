@@ -9,7 +9,7 @@ public class Principal {
 		Prato novoPrato, pratoConsultado;
 		boolean continuarMenu = true;
 		String entrada = "", saida = "";
-		String nome, formato, origem, paladar;
+		String nome, formato, origem, gosto;
 		int op, tempo;
 		double preco;
 
@@ -39,9 +39,9 @@ public class Principal {
 				nome = JOptionPane.showInputDialog(null, "Digite o nome do ingrediente");
 				formato = JOptionPane.showInputDialog(null, "Digite o formato do ingrediente");
 				origem = JOptionPane.showInputDialog(null, "Digite a origem do ingrediente");
-				paladar = JOptionPane.showInputDialog(null, "Digite o \"sabor\" do ingrediente");
+				gosto = JOptionPane.showInputDialog(null, "Digite o \"sabor\" do ingrediente");
 				
-				novoIngr = new Ingrediente(nome, formato, origem, paladar);
+				novoIngr = new Ingrediente(nome, formato, origem, gosto);
 				estoque.cadastrarIngrediente(novoIngr);
 				saida = "Ingrediente cadastrado com sucesso !";
 				break;
