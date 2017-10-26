@@ -10,7 +10,7 @@ public class ExemploIterator2 {
 	public static void main(String[] args) {
 		Pessoa pessoaAtual;
 		// Iterator itPessoas, itContas;
-		Iterator iterator;
+		Iterator it;
 		ArrayList<Pessoa> pessoasCadastradas = new ArrayList<Pessoa>();
 		ArrayList<Conta> contasCadastradas = new ArrayList<Conta>();
 
@@ -42,20 +42,20 @@ public class ExemploIterator2 {
 		Conta c1 = new Conta(novaPessoa);
 		contasCadastradas.add(c1);
 
-		iterator = pessoasCadastradas.iterator();
-		removePorNome(iterator, "bruno");
+		it = pessoasCadastradas.iterator();
+		removePorNome(it, "bruno");
 
-		iterator = contasCadastradas.iterator();
-		// removePorNome(itContas, "maria");
+		it = contasCadastradas.iterator();
+		removePorNome(it, "maria");
 
 		// No final, imprime toda a lista, para testes
-		iterator = pessoasCadastradas.iterator();
+		it = pessoasCadastradas.iterator();
 
 		JOptionPane.showMessageDialog(null, "Imprimindo Pessoas");
-		imprimirTudo(iterator);
-		iterator = contasCadastradas.iterator();
+		imprimirTudo(it);
+		it = contasCadastradas.iterator();
 		JOptionPane.showMessageDialog(null, "Imprimindo Contas");
-		imprimirTudo(iterator);
+		imprimirTudo(it);
 
 	}
 

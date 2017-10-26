@@ -9,7 +9,7 @@ public class ExemploIterator {
 
 	public static void main(String[] args) {
 		Pessoa pessoaAtual;
-		Iterator itPessoas;
+		Iterator it;
 		ArrayList<Pessoa> pessoasCadastradas = new ArrayList<Pessoa>();
 		
 		// Pessoa 1
@@ -40,8 +40,8 @@ public class ExemploIterator {
 		pessoasCadastradas.add(novaPessoa);
 
 		// 1: Mostrar Problema com For Each
-
-		/*for (Pessoa pessoa : pessoasCadastradas) {
+/*
+		for (Pessoa pessoa : pessoasCadastradas) {
 			if (pessoa.getNome() == "bruno") {
 				pessoasCadastradas.remove(pessoa);
 			}
@@ -57,18 +57,18 @@ public class ExemploIterator {
 		
 		// 4 : Mostrar o uso do Iterator
 
-		itPessoas = pessoasCadastradas.iterator();
-		while (itPessoas.hasNext()) {
-			pessoaAtual = (Pessoa) itPessoas.next();
+		it = pessoasCadastradas.iterator();
+		while (it.hasNext()) {
+			pessoaAtual = (Pessoa) it.next();
 			if (pessoaAtual.getNome() == "bruno") {
-				itPessoas.remove();
+				it.remove();
 			}
 		}
 
 		// No final, imprime toda a lista, para testes
-		itPessoas = pessoasCadastradas.iterator();
-		while (itPessoas.hasNext()) {
-			JOptionPane.showMessageDialog(null, itPessoas.next());
+		it = pessoasCadastradas.iterator();
+		while (it.hasNext()) {
+			JOptionPane.showMessageDialog(null, it.next());
 		}
 
 	}
