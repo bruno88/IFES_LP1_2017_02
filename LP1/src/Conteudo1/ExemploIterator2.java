@@ -12,6 +12,7 @@ public class ExemploIterator2 {
 		// Iterator itPessoas, itContas;
 		Iterator it;
 		ArrayList<Pessoa> pessoasCadastradas = new ArrayList<Pessoa>();
+
 		ArrayList<Conta> contasCadastradas = new ArrayList<Conta>();
 
 		// Adicionando Pessoa 1

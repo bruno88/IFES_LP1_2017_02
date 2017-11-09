@@ -3,8 +3,8 @@ package Conteudo2;
 public class ContaCorrente extends Conta {
 	private double limiteConta;
 
-	public ContaCorrente(double saldo, double limiteConta) {
-		super(saldo);
+	public ContaCorrente(double saldo, double limiteConta, boolean ativo) {
+		super(saldo, ativo);
 		this.limiteConta = limiteConta;
 	}
 

@@ -1,11 +1,12 @@
 package Conteudo2;
 
-public class Conta {
+public abstract class Conta {
 	protected int numConta;
 	protected double saldo;
 	protected static int qtdContas = 1;
+	protected boolean ativo;
 
-	public Conta(double saldo) {
+	public Conta(double saldo, boolean ativo) {
 		this.numConta = this.qtdContas;
 		this.qtdContas++;
 		this.saldo = saldo;
