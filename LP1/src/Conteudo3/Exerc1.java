@@ -13,16 +13,19 @@ public class Exerc1 {
 
 		// criei tijolo
 		Tijolo tijolo = new Tijolo(10.2, 20.4);
-		verificaSeFazNada(tijolo);
+		imprimirClassName(tijolo);
 		gerenciador.addDesenho(tijolo);
 		
 		// criei 1 retangulo
 		Retangulo ret1 = new Retangulo(area, perimetro, 20.2, 45.3);
 		gerenciador.addDesenho(ret1);
 		//ret1.desenha();
-
-		 area = Double.valueOf(JOptionPane.showInputDialog(null, "Digite a área da figura"));
-		 perimetro = Double.valueOf(JOptionPane.showInputDialog(null, "Digite o perimetro da figura"));
+		
+		// Imprime o nome da classe
+		imprimirClassName(ret1);
+		
+		area = Double.valueOf(JOptionPane.showInputDialog(null, "Digite a área da figura"));
+		perimetro = Double.valueOf(JOptionPane.showInputDialog(null, "Digite o perimetro da figura"));
 
 		// criei segundo retangulo
 		Retangulo ret2 = new Retangulo(area, perimetro, 10.2, 5.3);
@@ -38,7 +41,7 @@ public class Exerc1 {
 		//circ1.desenha();
 
 		area = Double.valueOf(JOptionPane.showInputDialog(null, "Digite a área da figura"));
-		 perimetro = Double.valueOf(JOptionPane.showInputDialog(null, "Digite o perimetro da figura"));
+		perimetro = Double.valueOf(JOptionPane.showInputDialog(null, "Digite o perimetro da figura"));
 
 		 
 		// criei triangulo
@@ -47,11 +50,15 @@ public class Exerc1 {
 		//tri1.desenha();
 
 		gerenciador.atualizarTela();
+		
+	
 
 	}
 
-	public static void verificaSeFazNada(FiguraGeometrica figura) {
-		figura.fazNada(true);
+	public static void imprimirClassName(FiguraGeometrica figura) {
+		System.out.println(figura.getClass().getSimpleName());
+		
+				
 	}
 
 }

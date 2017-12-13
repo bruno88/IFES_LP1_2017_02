@@ -29,6 +29,7 @@ public class Exerc1 {
 		ContaCorrente cc1 = new ContaCorrente(saldo, limite, ativo);
 		JOptionPane.showMessageDialog(null, cc1.toString());
 		cc1.obterSaldo();
+		
 		// Cria ContaPoupanca
 		//saldo = Double.valueOf(JOptionPane.showInputDialog("Digite o saldo."));
 		saldo = 4000;

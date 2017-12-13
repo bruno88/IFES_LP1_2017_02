@@ -19,4 +19,6 @@ public class GerenciadorDeDesenhos {
 			System.out.println("(do gerenciador)");
 		}
 	}
+	
+	
 }
